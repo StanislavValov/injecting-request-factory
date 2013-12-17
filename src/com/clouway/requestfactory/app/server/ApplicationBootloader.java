@@ -12,21 +12,6 @@ import com.google.inject.servlet.GuiceServletContextListener;
  * @author Miroslav Genov (mgenov@gmail.com)
  */
 public class ApplicationBootloader extends GuiceServletContextListener {
-
-  @Override
-  protected Injector getInjector() {
-
-    Injector injector = Guice.createInjector(new AbstractModule() {
-
-      @Override
-      protected void configure() {
-        install(new RequestFactoryInjectingModule("/gwtRequest"));
-
-        bind(User.class).toInstance(new User("test@test.com", "1234567"));
-        bind(CustomerService.class).to(CustomerServiceImpl.class).in(Singleton.class);
-      }
-    });
-
-    return injector;
+zdr ko prai6 
   }
 }
